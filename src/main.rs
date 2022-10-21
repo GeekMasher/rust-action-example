@@ -9,9 +9,10 @@ use octocrab::{params::State, models::issues::Issue};
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {
+    println!("PLEASE WORK!!");
     let mut action = match ghactions::init() {
         Ok(a) => a,
-        Err(err) => {
+        Err(_err) => {
             eprintln!("Failed to load ghactions...");
             std::process::exit(1);
         }
