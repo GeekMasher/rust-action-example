@@ -11,7 +11,7 @@ env_logger = "0.9"
 tokio = { version = "1", features = ["full"] }
 anyhow = "1.0"
 thiserror = "1.0"
-ghactions = "0.4.1"
+ghactions = "0.4.2"
 octocrab = "0.17"
 
 
