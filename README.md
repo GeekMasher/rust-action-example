@@ -6,7 +6,7 @@ Example Action.
 
 ```yml 
 - name: example-action
-  uses: GeekMasher/example-action@main
+  uses: GeekMasher/rust-action-example@main
 ```
 
 
