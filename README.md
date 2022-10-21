@@ -6,7 +6,7 @@ Example Action.
 
 ```yml 
 - name: example-action
-  uses: Mathew Payne/example-action@main
+  uses: GeekMasher/example-action@main
 ```
 
 
