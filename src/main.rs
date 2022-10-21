@@ -1,13 +1,10 @@
-// Logging functions
-use log::{info, debug, warn};
 // Easy Error enum magic
 use std::error::Error;
 use anyhow::Result;
 
 // Import core GHActions macros
-use ghactions::{group, groupend};
+use ghactions::{info, debug, warn, group, groupend};
 use octocrab::{params::State, models::issues::Issue};
-
 
 
 #[tokio::main]
