@@ -6,9 +6,9 @@ use ghactions::{info, debug, warn, group, groupend};
 use octocrab::{params::State, models::issues::Issue};
 
 
-#[tokio::main]
-async fn main() -> Result<()> {
+async fn workflow() -> Result<()> {
     println!("PLEASE WORK!!");
+
     let mut action = match ghactions::init() {
         Ok(a) => a,
         Err(_err) => {
@@ -46,4 +46,16 @@ async fn main() -> Result<()> {
 
     Ok(())
 }
+
+#[tokio::main]
+async fn main() {
+    match workflow().await {
+        Ok(_) => println!("Successfully Exiting..."),
+        Err(err) => {
+            eprintln!("Error: {}", err);
+            std::process::exit(1);
+        }
+    }
+}
+
 
