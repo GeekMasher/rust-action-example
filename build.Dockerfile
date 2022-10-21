@@ -19,6 +19,3 @@ RUN cargo build --release
 FROM alpine:3.16
 
 COPY --from=builder /app/target/release/$action_name /usr/bin/$action_name
-
-CMD ["/usr/bin/$action_name"]
-
