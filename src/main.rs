@@ -9,7 +9,13 @@ use octocrab::{params::State, models::issues::Issue};
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {
-    let mut action = ghactions::init()?;
+    let mut action = match ghactions::init() {
+        Ok(a) => a,
+        Err(err) => {
+            eprintln!("Failed to load ghactions...");
+            std::process::exit(1);
+        }
+    };
 
     if ! action.in_action() {
         warn!("Failed to load action.yml file");
