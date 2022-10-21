@@ -12,10 +12,10 @@ RUN apk update && \
     apk add git gcc g++ zlib-dev openssl-dev pkgconfig
 
 # Build and Install using Cargo
-RUN cargo build --release
+RUN cargo build
 
 
 # Production container image
 FROM alpine:3.16
 
-COPY --from=builder /app/target/release/$action_name /usr/bin/$action_name
+COPY --from=builder /app/target/debug/$action_name /usr/bin/$action_name
