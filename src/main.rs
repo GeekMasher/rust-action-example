@@ -1,5 +1,4 @@
 // Easy Error enum magic
-use std::error::Error;
 use anyhow::Result;
 
 // Import core GHActions macros
@@ -8,7 +7,7 @@ use octocrab::{params::State, models::issues::Issue};
 
 
 #[tokio::main]
-async fn main() -> Result<(), Box<dyn Error>> {
+async fn main() -> Result<()> {
     println!("PLEASE WORK!!");
     let mut action = match ghactions::init() {
         Ok(a) => a,
